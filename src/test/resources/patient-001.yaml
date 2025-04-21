@@ -1,0 +1,21 @@
+test_id: Patient-001
+description: Nome do paciente não é fornecido.
+context:
+  igs:
+    - br.go.ses.core#0.0.1
+  profiles:
+    - https://fhir.saude.go.gov.br/r4/core/StructureDefinition/individuo
+  resources:
+    - valuesets/my-valueset.json
+    - instancias/
+instance_path: instances/patient_example.json
+expected_results:
+  status: error
+  errors:
+    - "Patient.name is missing"
+  warnings: []
+  informations: []
+  invariants:
+    - expression: "OperationOutcome.issue.where(severity='error').count() > 0"
+      expected: true
+
