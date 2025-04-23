@@ -11,13 +11,37 @@ public class TestResult {
     private List<ValidationDiff> differences;
 
     // Getters e Setters
+
+    public String getTestId() {
+        return testId;
+    }
+
+    public void setTestId(String testId) {
+        this.testId = testId;
+    }
+
+    public boolean isPassed() {
+        return passed;
+    }
+
+    public void setPassed(boolean passed) {
+        this.passed = passed;
+    }
+
+    public OperationOutcome getOutcome() {
+        return outcome;
+    }
+
+    public void setOutcome(OperationOutcome outcome) {
+        this.outcome = outcome;
+    }
+
+    public List<ValidationDiff> getDifferences() {
+        return differences;
+    }
+
+    public void setDifferences(List<ValidationDiff> differences) {
+        this.differences = differences;
+    }
 }
 
-class ValidationDiff {
-    private String type; // "MISSING_ERROR", "UNEXPECTED_ERROR", etc.
-    private String message;
-    private String location;
-    private String severity;
-
-    // Getters e Setters
-}

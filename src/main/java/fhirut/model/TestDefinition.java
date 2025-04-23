@@ -11,24 +11,45 @@ public class TestDefinition {
     private ExpectedResults expectedResults;
 
     // Getters e Setters
-}
+    public String getTestId() {
+        return testId;
+    }
 
-class TestContext {
-    private List<String> igs;
-    private List<String> profiles;
-    private List<File> resources;
+    public void setTestId(String testId) {
+        this.testId = testId;
+    }
 
-    // Getters e Setters
-}
+    public String getDescription() {
+        return description;
+    }
 
-class ExpectedResults {
-    private String status;
-    private List<String> errors;
-    private List<String> warnings;
-    private List<String> informations;
-    private List<InvariantCheck> invariants;
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    // Getters e Setters
+    public TestContext getContext() {
+        return context;
+    }
+
+    public void setContext(TestContext context) {
+        this.context = context;
+    }
+
+    public File getInstancePath() {
+        return instancePath;
+    }
+
+    public void setInstancePath(File instancePath) {
+        this.instancePath = instancePath;
+    }
+
+    public ExpectedResults getExpectedResults() {
+        return expectedResults;
+    }
+
+    public void setExpectedResults(ExpectedResults expectedResults) {
+        this.expectedResults = expectedResults;
+    }
 }
 
 class InvariantCheck {
@@ -36,4 +57,20 @@ class InvariantCheck {
     private boolean expected;
 
     // Getters e Setters
+
+    public String getExpression() {
+        return expression;
+    }
+
+    public void setExpression(String expression) {
+        this.expression = expression;
+    }
+
+    public boolean isExpected() {
+        return expected;
+    }
+
+    public void setExpected(boolean expected) {
+        this.expected = expected;
+    }
 }
