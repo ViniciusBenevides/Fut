@@ -1,27 +1,14 @@
-{
-  "resourceType" : "Immunization",
-  "id" : "ImunobiologicoAdministradoExemplo",
-  "meta" : {
-    "profile" : ["https://fhir.saude.go.gov.br/r4/core/StructureDefinition/imunobiologico-administrado"]
-  },
-  "text" : {
-    "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Immunization ImunobiologicoAdministradoExemplo</b></p><a name=\"ImunobiologicoAdministradoExemplo\"> </a><a name=\"hcImunobiologicoAdministradoExemplo\"> </a><a name=\"ImunobiologicoAdministradoExemplo-pt-BR\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-imunobiologico-administrado.html\">Administração de Imunobiológicos em Crianças e Pré-Adolescentes em Goiás</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{http://www.saude.gov.br/fhir/r4/CodeSystem/BRImunobiologico 18}\">VR</span></p><p><b>patient</b>: <a href=\"Patient-PacienteAugusto.html\">Augusta Pereira Other, DoB: 1979-02-19 ( https://fhir.saude.go.gov.br/sid/cpf#CPF#1234567879)</a></p><p><b>occurrence</b>: 2015-02-07 13:28:17-0300</p><p><b>lotNumber</b>: 1224</p><h3>ProtocolApplieds</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>DoseNumber[x]</b></td><td><b>SeriesDoses[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>d1</td><td>2</td></tr></table></div>"
-  },
-  "status" : "completed",
-  "vaccineCode" : {
-    "coding" : [{
-      "system" : "http://www.saude.gov.br/fhir/r4/CodeSystem/BRImunobiologico",
-      "code" : "18"
-    }]
-  },
-  "patient" : {
-    "reference" : "Patient/PacienteAugusto"
-  },
-  "occurrenceDateTime" : "2015-02-07T13:28:17-03:00",
-  "lotNumber" : "1224",
-  "protocolApplied" : [{
-    "doseNumberString" : "d1",
-    "seriesDosesPositiveInt" : 2
-  }]
-}
+test_id: Patient-001
+description: Validação básica contra perfil de indivíduo do SES-GO
+context:
+  igs:
+    - br.go.ses.core#0.0.1
+    - br.ufg.cgis.rnds-lite#0.2.4
+  profiles:
+    - http://fhir.saude.go.gov.br/r4/core/StructureDefinition/individuo
+instance_path: prototipo_em_java/src/test/resources/instances/patient_example.json
+expected_results:
+  status: success
+  errors: []
+  warnings:
+    - "dom-6" # Aviso esperado sobre narrative
